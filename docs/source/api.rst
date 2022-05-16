@@ -9,7 +9,12 @@ API
 Intro
 -----
 
-The code is written in C#, an object oriented language. A basic introduction is given at https://www.w3schools.com/cs/index.php . In terms of syntax, is similar to C++, but more flexible, meaning it allows (and probably incentives) the programer to define everything in a class, which can have different attributes (public, private, …). The “vocabulary” is defined within namespaces, that can be imported with “using …”.
+The code is written in C#, an object oriented language. A basic introduction is given at https://www.w3schools.com/cs/index.php . In terms of syntax, is similar to C++, but more flexible, meaning it allows (and probably incentives) the programer to define everything in a class, which can have different attributes 
+(public, private, …). 
+The “vocabulary” is defined within namespaces, that can be imported with 
+
+.. code-block:: python
+   using namespace;
 
 The API is built in ASP .NET Core (.NET 6) with C#. ASP stands for Active Server Pages and is a development framework for welding webpages and executing scripts on a web server. This code framework is anyway more similar to .NET 5 as far as it seems to me (i.e. there is still a Startup.cs file which is not necessary anymore in .NET 6).
 Startup.cs is about registering services and injection of modules in HTTP Pipeline. It defines class Startup that is triggered when application launches and in each HTTP request/response.
