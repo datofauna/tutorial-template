@@ -19,7 +19,7 @@ Using PostMan
 ----------------
 
 Import API Collection
-Setting environments
+Setting environments (NB: the developmnet env in vscode is the local environment in postman)
 Authentication
 Send a request
 Create a new request
