@@ -8,20 +8,22 @@ API
 
 Intro
 -----
+The API is built in ASP .NET Core (.NET 6) with C#. ASP stands for Active Server Pages and is a development framework for welding webpages and executing scripts on a web server. This code framework is anyway more similar to .NET 5 as far as it seems to me (i.e. there is still a Startup.cs file which is not necessary anymore in .NET 6).
+Startup.cs is about registering services and injection of modules in HTTP Pipeline. It defines class Startup that is triggered when application launches and in each HTTP request/response.
+
+
+
+Language: C#
+------------
 
 The code is written in C#, an object oriented language. A basic introduction is given at https://www.w3schools.com/cs/index.php . In terms of syntax, is similar to C++, but more flexible, meaning it allows (and probably incentives) the programer to define everything in a class, which can have different attributes 
 (public, private, …). 
-The “vocabulary” is defined within namespaces, that can be imported with 
+The “vocabulary” is defined within namespaces, which can be both built-in or defined by user in other script of the same folder, that can be imported within a script with 
 
 .. code-block:: csharp
 
-   $a = array(
-      'one' => 1,
-      // ...
-   );
-
-The API is built in ASP .NET Core (.NET 6) with C#. ASP stands for Active Server Pages and is a development framework for welding webpages and executing scripts on a web server. This code framework is anyway more similar to .NET 5 as far as it seems to me (i.e. there is still a Startup.cs file which is not necessary anymore in .NET 6).
-Startup.cs is about registering services and injection of modules in HTTP Pipeline. It defines class Startup that is triggered when application launches and in each HTTP request/response.
+   using System;
+   using FaunaPhotonics.Data.Api.Activity;
 
 
 Program.cs
@@ -52,17 +54,46 @@ Get[Feature]Handler.cs
 
 The Handlers are the scripts that effectively connects to data source (i..e the TableStorage), queries data (i.e. filtering by date), processes the data (i.e. retrieve information from PartitionKey and RowKey) and collect the final result into objects instance of a certain class. For example, the final result of a biodiversity request by sessions is a list of object instances of the class SessionBiodiversityIndicator, each of which comprised a numerical attribute (SessionId) and an object instance of class BiodiversityIndicator, which in turn has four numerical attributes (Period, IndicatorId, InsectCount, Value) plus useful methods (i.e. checking that InsectCount>100). 
 
+Data Sources
+------------
+
+The API gets data from faunaphotonicsapi, fpbobprod, faunadb, iothub.
+As defined in /Shared/TableCoonectionfactory or SqlConnectionfactory.
+
+
 Recurrent objects
 -----------------
 
 .. glossary::
 
-   environment
-      A structure where information about all documents under the root is
-      saved, and used for cross-referencing.  The environment is pickled
-      after the parsing stage, so that successive runs only need to read
-      and parse new and changed documents.
+   private, public
+      access modifier for members
 
-   source directory
-      The directory which, including its subdirectories, contains all
-      source files for one Sphinx project.
+   Abstract class
+      it cannot be created to initiate object, only to be inherited
+
+   Abstract method
+      Only in abstract classes, it has no body(only in derived classes)
+
+   Interface
+      A fully abstract class with only abstract methods. Conventionally its name starts with "I". When a class implements (inherits from) an interface, you must override all of its methods. An interface can contain properties and methods (without specifying "abstract" keyword, since they are like that by default) but no fields.. NB: While a class can only inherit from one parent class, it can implement from multiple interfaces.
+
+   Request
+      
+   override
+      overrides the base class method with the same namesake
+
+   ?? operator
+      null-coalescing operator
+      aa??bb??cc?? will give the result of a if it's not null, otherwise try b, otherwise c
+
+   ? 
+      nullable type, i.e. bool? can be [True, False, Null]
+
+   properties
+      by default all members of a class are private. Private variables can be accessed through the concept of "proprieties", an hybrid between variable and method. A property has two methods: get and set, used for having encapsulatation and making fields read-only (get) or write-only(set)  
+
+   virtual 
+
+
+   
