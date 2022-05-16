@@ -10,10 +10,15 @@ To test and debug the API, it is advised to intall VSCode and Postman using pip:
 
 .. code-block:: console
 
-   (.venv) $ pip install postman
+   (.venv) $ pip install 
 
-Creating recipes
+Using PostMan
 ----------------
+
+Import API Collection
+Setting environments
+Authentication
+
 
 To retrieve a list of random ingredients,
 you can use the ``lumache.get_random_ingredients()`` function:
@@ -32,3 +37,14 @@ For example:
 >>> lumache.get_random_ingredients()
 ['shells', 'gorgonzola', 'parsley']
 
+
+Debug mode in VSCode
+--------------------
+
+Install extension
+
+For example:
+
+>>> import lumache
+>>> lumache.get_random_ingredients()
+['shells', 'gorgonzola', 'parsley']

@@ -24,7 +24,7 @@ Program.cs
 ----------
 
 A .NET Core application runs inside a host that handles the application startup, web server configuration etc., as well as resources like logging, dependency injection and any IHostedService implementations. A host is created, configured, and executed using the code in Program.cs. 
-The Main() method is the entry point of the application. The host is created calling the Build().Run() extension method in a CreateDefaultBuilder method. The ConfigureWebHostDefaults() method can be used to configure a web application host .In our case it refers to Startup
+The Main() method is the entry point of the application. The host is created calling the ``Build().Run()`` extension method in a CreateDefaultBuilder method. The ConfigureWebHostDefaults() method can be used to configure a web application host .In our case it refers to Startup
 
 
 Startup.cs
@@ -42,3 +42,23 @@ In here you can also set up documentation for swagger using ///
 The Get[feature]Request is a class child of IRequest, an interface for Http requests classes. In here we just set up the constructor. For example the sessionids of our request (or user, or subscriptionids), which is then also a property. 
 
 The Get[feature]Request is a class child of IRequest, an interface for Http requests classes. In here we just set up the constructor. For example the sessionids of our request (or user, or subscriptionids), which is then also a property. 
+
+Get[Feature]Handler.cs
+----------------------
+
+The Handlers are the scripts that effectively connects to data source (i..e the TableStorage), queries data (i.e. filtering by date), processes the data (i.e. retrieve information from PartitionKey and RowKey) and collect the final result into objects instance of a certain class. For example, the final result of a biodiversity request by sessions is a list of object instances of the class SessionBiodiversityIndicator, each of which comprised a numerical attribute (SessionId) and an object instance of class BiodiversityIndicator, which in turn has four numerical attributes (Period, IndicatorId, InsectCount, Value) plus useful methods (i.e. checking that InsectCount>100). 
+
+Recurrent objects
+-----------------
+
+.. glossary::
+
+   environment
+      A structure where information about all documents under the root is
+      saved, and used for cross-referencing.  The environment is pickled
+      after the parsing stage, so that successive runs only need to read
+      and parse new and changed documents.
+
+   source directory
+      The directory which, including its subdirectories, contains all
+      source files for one Sphinx project.
