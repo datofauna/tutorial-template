@@ -12,13 +12,17 @@ To test and debug the API, it is advised to intall VSCode and Postman using pip:
 
    (.venv) $ pip install 
 
+Also .NET compiler
+
+
 Using PostMan
 ----------------
 
 Import API Collection
 Setting environments
 Authentication
-
+Send a request
+Create a new request
 
 To retrieve a list of random ingredients,
 you can use the ``lumache.get_random_ingredients()`` function:
@@ -42,9 +46,13 @@ Debug mode in VSCode
 --------------------
 
 Install extension
+IMport appsetting.Development.json
 
-For example:
+Run in terminal:
 
->>> import lumache
->>> lumache.get_random_ingredients()
-['shells', 'gorgonzola', 'parsley']
+.. code-block:: console
+
+   (.venv) $ dotnet run
+
+Swagger
+-------
