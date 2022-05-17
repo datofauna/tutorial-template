@@ -12,7 +12,6 @@ The API is built in ASP .NET Core (.NET 6) with C#. ASP stands for Active Server
 Startup.cs is about registering services and injection of modules in HTTP Pipeline. It defines class Startup that is triggered when application launches and in each HTTP request/response.
 
 
-
 Language: C#
 ------------
 
@@ -57,7 +56,7 @@ The Handlers are the scripts that effectively connects to data source (i..e the 
 Data Sources
 ------------
 
-The API gets data from faunaphotonicsapi, fpbobprod, faunadb, iothub.
+The API gets data from the following storages: faunaphotonicsapi, fpbobprod, faunadb, iothub.
 As defined in /Shared/TableCoonectionfactory or SqlConnectionfactory.
 
 
@@ -67,13 +66,13 @@ Recurrent objects
 .. glossary::
 
    private, public
-      access modifier for members
+      access modifiers for class members
 
    Abstract class
       it cannot be created to initiate object, only to be inherited
 
    Abstract method
-      Only in abstract classes, it has no body(only in derived classes)
+      Only in abstract classes, it has no body (only in derived classes)
 
    Interface
       A fully abstract class with only abstract methods. Conventionally its name starts with "I". When a class implements (inherits from) an interface, you must override all of its methods. An interface can contain properties and methods (without specifying "abstract" keyword, since they are like that by default) but no fields.. NB: While a class can only inherit from one parent class, it can implement from multiple interfaces.
@@ -81,7 +80,7 @@ Recurrent objects
    Request
       
    override
-      overrides the base class method with the same namesake
+      overrides the base class method with the same name
 
    ?? operator
       null-coalescing operator
