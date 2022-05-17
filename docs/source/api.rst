@@ -29,7 +29,7 @@ Program.cs
 ----------
 
 A .NET Core application runs inside a host that handles the application startup, web server configuration etc., as well as resources like logging, dependency injection and any IHostedService implementations. A host is created, configured, and executed using the code in Program.cs. 
-The  ``Main() `` method is the entry point of the application. The host is created calling the ``Build().Run()`` extension method in a  ``CreateDefaultBuilder `` method. The  ``ConfigureWebHostDefaults() `` method can be used to configure a web application host .In our case it refers to Startup
+The  ``Main()`` method is the entry point of the application. The host is created calling the ``Build().Run()`` extension method in a  ``CreateDefaultBuilder `` method. The  ``ConfigureWebHostDefaults() `` method can be used to configure a web application host .In our case it refers to Startup
 
 
 Startup.cs
