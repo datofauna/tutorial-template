@@ -114,11 +114,11 @@ Morphology
 
 
 Class with 4 attributes (connectionstring to sql database, to session repo, to insectaggregate repo, and a translationService) and 6 methods:
-GetMorphologicalActivity: 5 variables: session from sessionrepo, timezone from GetTimezoneforSession, classifier from GetMorphClassifiers, dailydata from aggregaterepo with GetDailyInsectAggregates. If there is dailydata, return GetWeekMorphologicalActivity with that, otherwise data is not from daily but from simply GetInsectAggregates. Pass that to GetWeekMorphologicalActivity instead
-GetWeekMorphologicalActivity: (overloaded with DailyInsectdata or InsectData): in both cases you have inputData, startdate, endDate, weekYears, groups (now empty list of MorphpologicalGroupActvity objects, classifier and sessionname. For each classifier and for each week in weekYears you add to groups the object activity, initialized by Name and SessionName, and the Activity dictionary (week-count). NB: translate names when required. NB2: If instead of InsectData we have the DailyInsectData object, is the same, just the names of attributes are slightly different 
-TranslatedNameFromClassifierId: translated names
-GetMorphClassifiers: connects to sql database and get the names of classifiers required for that session (in particular that subjectcomposition, namely crop)
-GetTimezoneForSession: connects to sql database and get the timezone of that session 
+#. GetMorphologicalActivity: 5 variables: session from sessionrepo, timezone from GetTimezoneforSession, classifier from GetMorphClassifiers, dailydata from aggregaterepo with GetDailyInsectAggregates. If there is dailydata, return GetWeekMorphologicalActivity with that, otherwise data is not from daily but from simply GetInsectAggregates. Pass that to GetWeekMorphologicalActivity instead
+#. GetWeekMorphologicalActivity: (overloaded with DailyInsectdata or InsectData): in both cases you have inputData, startdate, endDate, weekYears, groups (now empty list of MorphpologicalGroupActvity objects, classifier and sessionname. For each classifier and for each week in weekYears you add to groups the object activity, initialized by Name and SessionName, and the Activity dictionary (week-count). NB: translate names when required. NB2: If instead of InsectData we have the DailyInsectData object, is the same, just the names of attributes are slightly different 
+#. TranslatedNameFromClassifierId: translated names
+#. GetMorphClassifiers: connects to sql database and get the names of classifiers required for that session (in particular that subjectcomposition, namely crop)
+#. GetTimezoneForSession: connects to sql database and get the timezone of that session 
 
 
 Glossary
