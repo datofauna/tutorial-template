@@ -141,7 +141,7 @@ Glossary
    Request
       
    override
-      overrides the base class method with the same name
+      overrides the base class method with the same name within child class
 
    ?? operator
       null-coalescing operator
