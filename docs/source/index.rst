@@ -1,4 +1,4 @@
-Welcome to Lumache's documentation!
+FaunaPhotonics API's documentation!
 ===================================
 
 Check out the :doc:`usage` section for further information, including
